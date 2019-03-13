@@ -23,12 +23,26 @@ public class SaisieRPN
     public void work()
     {
         String in = "";
-        while(in.equals("quit"))
+        String stackinf = "";
+        int oper = 0;
+        while(!in.equals("exit"))
         {
             System.out.print("Entrez un nombre ou une operation...");
             in = sc.next();
+            try
+            {
+                oper = Integer.parseInt(in);
+                mrpn.addOper(oper);
+            }
+            catch(NumberFormatException ne)
+            {
+               if(!in.equals("exit"))
+               {
+                   mrpn.addOper(mrpn.getResult(in.charAt(0)));
+               }
+            }
             
-            System.out.print("\n");
+            mrpn.printStack();
         }
     }
 }

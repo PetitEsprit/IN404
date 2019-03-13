@@ -11,4 +11,3 @@ test: Test.java
 
 run: test
 	java -cp Chat.jar:. Test
-	

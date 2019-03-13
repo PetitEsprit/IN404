@@ -1,8 +1,15 @@
-public class Main
+public enum Main
 {
-	public static void main(String [] args)
+	APP;
+	
+	public void run()
 	{
 		File a = new Regular("lol.txt", 4);
 		System.out.println(a.toString());
+	}
+	
+	public static void main(String [] args)
+	{
+		APP.run();
 	}
 }

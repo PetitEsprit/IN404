@@ -26,17 +26,41 @@ public class MoteurRPN
     
     public int getResult(char operateur)
     {
-        int res;
-        if(operateur == '+'){res = Operation.PLUS.eval(oper.pop(), oper.pop());}
-        else if(operateur == '-'){res = Operation.MOINS.eval(oper.pop(), oper.pop());}
-        else if(operateur == '*'){res = Operation.MULT.eval(oper.pop(), oper.pop());}
-        else {res = Operation.DIV.eval(oper.pop(), oper.pop());}
+        int res = 0;
+        int oper2 = oper.pop();
+        int oper1 = oper.pop(); 
+        switch(operateur)
+        {
+            case '+' :
+                res = Operation.PLUS.eval(oper1, oper2); 
+                break;
+            case '-' :
+                res = Operation.MOINS.eval(oper1, oper2); 
+                break;
+            case '*' :
+                res = Operation.MULT.eval(oper1, oper2); 
+                break;
+            case '/' :
+                res = Operation.DIV.eval(oper1, oper2); 
+                break;
+            default :
+                res = 0;
+                break;
+        }
         return res;
     }
     
     public void addOper(int nb)
     {
         oper.push(nb);
+    }
+    
+    public void printStack()
+    {
+        Object[] objects = oper.toArray();
+        for (Object obj : objects) 
+            System.out.print(obj + " ");
+        System.out.print("\n");
     }
     
 }
