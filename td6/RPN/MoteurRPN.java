@@ -1,4 +1,5 @@
 import java.util.Stack;
+import java.util.EmptyStackException;
 
 /**
  * Décrivez votre classe MoteurRPN ici.
@@ -27,26 +28,43 @@ public class MoteurRPN
     public int getResult(char operateur)
     {
         int res = 0;
-        int oper2 = oper.pop();
-        int oper1 = oper.pop(); 
-        switch(operateur)
+        int oper2 = 0;
+        int oper1 = 0;
+        
+        try
         {
-            case '+' :
-                res = Operation.PLUS.eval(oper1, oper2); 
-                break;
-            case '-' :
-                res = Operation.MOINS.eval(oper1, oper2); 
-                break;
-            case '*' :
-                res = Operation.MULT.eval(oper1, oper2); 
-                break;
-            case '/' :
-                res = Operation.DIV.eval(oper1, oper2); 
-                break;
-            default :
-                res = 0;
-                break;
+            if(!oper.empty())
+            {
+                oper2 = oper.pop();
+                oper1 = oper.pop();
+                switch(operateur)
+                {
+                        case '+' :
+                        res = Operation.PLUS.eval(oper1, oper2);
+                        break;
+                        case '-' :
+                        res = Operation.MOINS.eval(oper1, oper2); 
+                        break;
+                        case '*' :
+                        res = Operation.MULT.eval(oper1, oper2); 
+                        break;
+                        case '/' :
+                        res = Operation.DIV.eval(oper1, oper2); 
+                        break;
+                        default :
+                        System.out.println("Operateur non reconnue");
+                        oper.push(oper1);res = oper2;
+                        break;
+                }
+            }
         }
+        
+        catch(EmptyStackException ee)
+        {
+          System.out.println("Operation Impossible");
+          res = oper2;
+        }
+        
         return res;
     }
     
