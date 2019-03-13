@@ -1,0 +1,3 @@
+javac -g src/*.java
+mv src/*.class classes
+jar -cfe SystemFichier.jar ...

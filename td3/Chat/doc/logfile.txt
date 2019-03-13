@@ -1,0 +1,39 @@
+Class documentation
+<---- javadoc command: ---->
+/usr/lib/jvm/java-8-oracle/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+/usr/share/bluej/bluejcore.jar:/usr/share/bluej/junit-4.11.jar:/usr/share/bluej/hamcrest-core-1.3.jar:/usr/share/bluej/lang-stride.jar:/usr/share/bluej/userlib/pi4j-device.jar:/usr/share/bluej/userlib/pi4j-core.jar:/usr/share/bluej/userlib/pi4j-service.jar:/usr/share/bluej/userlib/pi4j-gpio-extension.jar:/home/user/Bureau/CPOO/Chat
+-d
+/home/user/Bureau/CPOO/Chat/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+/home/user/Bureau/CPOO/Chat/Serveur.java
+<---- end of javadoc command ---->
+Loading source file /home/user/Bureau/CPOO/Chat/Serveur.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_144
+Building tree for all the packages and classes...
+Generating /home/user/Bureau/CPOO/Chat/doc/Serveur.html...
+/home/user/Bureau/CPOO/Chat/Serveur.java:30: warning - @param argument "y" is not a parameter name.
+Generating /home/user/Bureau/CPOO/Chat/doc/package-frame.html...
+Generating /home/user/Bureau/CPOO/Chat/doc/package-summary.html...
+Generating /home/user/Bureau/CPOO/Chat/doc/constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating /home/user/Bureau/CPOO/Chat/doc/allclasses-frame.html...
+Generating /home/user/Bureau/CPOO/Chat/doc/allclasses-noframe.html...
+Generating /home/user/Bureau/CPOO/Chat/doc/index.html...
+1 warning
