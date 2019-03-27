@@ -10,7 +10,7 @@ public enum Operation
     PLUS('+')
     {
         @Override
-        public int eval(int oper1, int oper2)
+        public double eval(double oper1, double oper2)
         {
             return oper1 + oper2;
         }
@@ -18,7 +18,7 @@ public enum Operation
     MOINS('-')
     {
         @Override
-        public int eval(int oper1, int oper2)
+        public double eval(double oper1, double oper2)
         {
             return oper1 - oper2;
         }
@@ -26,7 +26,7 @@ public enum Operation
     MULT('*')
     {
         @Override
-        public int eval(int oper1, int oper2)
+        public double eval(double oper1, double oper2)
         {
             return oper1 * oper2;
         }
@@ -34,7 +34,7 @@ public enum Operation
     DIV('/')
     {
         @Override
-        public int eval(int oper1, int oper2)
+        public double eval(double oper1, double oper2)
         {
             return oper1 / oper2;
         }
@@ -47,5 +47,5 @@ public enum Operation
         this.symbole = symbole;
     }
     
-    public abstract int eval(int oper1, int oper2);
+    public abstract double eval(double oper1, double oper2);
 }

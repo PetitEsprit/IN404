@@ -10,26 +10,29 @@ import java.util.EmptyStackException;
 public class MoteurRPN
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private Stack<Integer> oper;
+    private static final double MAX_VALUE = 10000;
+    private static final double MIN_VALUE = 0.1; 
+    private Stack<Double> oper;
 
     /**
      * Constructeur d'objets de classe MoteurRPN
      */
     public MoteurRPN()
     {
-         oper = new Stack<Integer>();
+         oper = new Stack<Double>();
     }
     
-    public Stack<Integer> getOper()
+    public Stack<Double> getOper()
     {
         return this.oper;
     }
     
-    public int getResult(char operateur)
+    
+    public double getResult(char operateur)
     {
-        int res = 0;
-        int oper2 = 0;
-        int oper1 = 0;
+        double res = 0;
+        double oper2 = 0;
+        double oper1 = 0;
         
         try
         {
@@ -68,7 +71,19 @@ public class MoteurRPN
         return res;
     }
     
-    public void addOper(int nb)
+    /*Réécriture*/
+    
+    void appliquer(Operation op)
+    {
+		if(oper.size() >= 2)
+		{
+			addOper(op.eval(oper.pop(), oper.pop()));
+		}
+	}
+    
+    
+    /*Fin Réécriture*/
+    public void addOper(double nb)
     {
         oper.push(nb);
     }
@@ -80,5 +95,5 @@ public class MoteurRPN
             System.out.print(obj + " ");
         System.out.print("\n");
     }
-    
+
 }
